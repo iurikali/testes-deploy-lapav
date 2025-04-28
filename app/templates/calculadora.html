@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+    {% block conteudo %}
+        <form action="/calcular" method="post">
+            VALOR 1: <input type="text" name="int1"><br/>
+            VALOR 2: <input type="text" name="int2"><br/>
+            <button type="submit">Calcular</button>
+        </form>
+    {% endblock %}

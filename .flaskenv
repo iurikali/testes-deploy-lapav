@@ -1,0 +1,2 @@
+FLASK_APP=soma.py
+FLASK_ENV=development
