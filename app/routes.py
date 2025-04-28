@@ -1,12 +1,12 @@
 from app import app
 from flask import render_template
 from flask import request
+from flask import Response
+from calc_viga import *
 
 @app.route('/')
 def index():
-    nome = "Kali"
-    array = ["5", "2", "3"]
-    return render_template('index.html', nome=nome, array= array)
+    return render_template('index.html')
 
 @app.route('/calculadora')
 def calculadora():
@@ -14,9 +14,9 @@ def calculadora():
 
 @app.route('/calcular', methods=['POST'])
 def calcular():
-    valor_1 = int(request.form.get('int1'))
-    valor_2 = int(request.form.get('int2'))
-
-    resultado = str(valor_1 + valor_2)
-
-    return render_template('calcular.html', resultado= resultado)
+    l = float(request.form.get('comprimento'))
+    posicao = (float(request.form.get('posicao_x')), float(request.form.get('posicao_y')))
+    valor = (float(request.form.get('valor_x')), float(request.form.get('valor_y')))
+    dist = (float(request.form.get('inicio')), float(request.form.get('fim')), float(request.form.get('q')))
+    buf = calcula(l, posicao, valor, dist)
+    return Response(buf, mimetype='image/png')

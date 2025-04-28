@@ -2,8 +2,19 @@
 {% extends 'base.html' %}
     
     {% block conteudo %}
-        <h2> HELLO HELLO HOW ARE YOU, {{nome}}</h2>
+        <h2> TESTE CALCULO VIGA</h2>
         <p>
-            O VALOR 0 DA ARRAY É: {{array[0]}}
+            APERTE PARA CALCULAR
         </p>
+        <form action="/calcular" method="post">
+            Comprimento da viga (m): <input type="text" name="comprimento"><br/>
+            Posicao X: <input type="text" name="posicao_x"><br/>
+            Posicao Y: <input type="text" name="posicao_y"><br/>
+            Valor X: <input type="text" name="valor_x"><br/>
+            Valor Y: <input type="text" name="valor_y"><br/>
+            Inicio: <input type="text" name="inicio"><br/>
+            Fim: <input type="text" name="fim"><br/>
+            q (kN/m): <input type="text" name="q"><br/>
+            <button type="submit">Calcular</button>
+        </form>
     {% endblock %}
