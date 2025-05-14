@@ -1,0 +1,17 @@
+
+{% extends 'base.html' %}
+    
+    {% block conteudo %}
+        <form action="/" method="post">
+            Comprimento da viga(m) <input type="text" name="comprimento" required><br/>
+            Posicao X <input type="text" name="posicao_x" required><br/>
+            Posicao Y <input type="text" name="posicao_y" required><br/>
+            Valor X <input type="text" name="valor_x" required><br/>
+            Valor Y <input type="text" name="valor_y" required><br/>
+            Inicio <input type="text" name="inicio" required><br/>
+            Fim <input type="text" name="fim" required><br/>
+            q (kN/m) <input type="text" name="carga" required><br/>
+
+            <button type="submit">Calcular</button>
+        </form>
+    {% endblock %}

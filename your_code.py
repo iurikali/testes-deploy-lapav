@@ -1,17 +1,33 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Apr 22 23:56:30 2025
-
-@author: jeffe
-"""
-
+import io
+import os
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-import io
 
-def calcula(comprimento, posicao, valor, dist):
+'''
+def calcula(valor_1, valor_2):    
+    resultado = valor_1 + valor_2
+    resultado_string = "O RESULTADO DA SOMA EH: " + str(resultado)
+
+    buffer = io.BytesIO()
+    buffer.write(resultado_string.encode('utf-8'))
+    buffer.seek(0)
+
+    nome = "soma.txt"
+
+    lista_retorno = [buffer, nome]
+
+    return lista_retorno
+'''
+
+
+def calcula(comprimento, posicao_x, posicao_y, valor_x, valor_y, inicio, fim, carga):
+
+    posicao = (posicao_x, posicao_y)
+    valor = (valor_x, valor_y)
+    dist = (inicio, fim, carga)
+
     # Dados de entrada (exemplo)
     tipo_viga = "apoiada-apoiada"  # ou "engastada-livre"
     L = comprimento  # comprimento da viga em metros
@@ -66,18 +82,8 @@ def calcula(comprimento, posicao, valor, dist):
     plt.savefig(buf, format='png')
     buf.seek(0)
 
-    # Relatório
-    print("=========== MEMORIAL DE CÁLCULO ===========")
-    print(f"Viga {tipo_viga.capitalize()}")
-    print(f"L = {L} m")
-    print("Cargas Concentradas:")
-    for pos, val in cargas_concentradas:
-        print(f" - {val} kN em x = {pos} m")
-    print("Cargas Distribuídas:")
-    for a, b, q in cargas_distribuidas:
-        print(f" - {q} kN/m de x = {a} até x = {b}")
-    print(f"Reações: RA = {RA:.2f} kN, RB = {RB:.2f} kN")
-    print(f"Q(x): min = {min(Q):.2f} kN, max = {max(Q):.2f} kN")
-    print(f"M(x): min = {min(M):.2f} kN.m, max = {max(M):.2f} kN.m")
 
-    return buf.getvalue()
+
+    output = [buf, "grafico.png"]
+
+    return output
