@@ -3,14 +3,36 @@
     
     {% block conteudo %}
         <form action="/" method="post">
-            Comprimento da viga(m) <input type="text" name="comprimento" required><br/>
-            Posicao X <input type="text" name="posicao_x" required><br/>
-            Posicao Y <input type="text" name="posicao_y" required><br/>
-            Valor X <input type="text" name="valor_x" required><br/>
-            Valor Y <input type="text" name="valor_y" required><br/>
-            Inicio <input type="text" name="inicio" required><br/>
-            Fim <input type="text" name="fim" required><br/>
-            q (kN/m) <input type="text" name="carga" required><br/>
+            E1 <input type="number" name="e_1" required><br/>
+            E2 <input type="number" name="e_2" required><br/>
+            E3 <input type="number" name="e_3" required><br/>
+            H1 <input type="number" name="h_1" required><br/>
+            H2 <input type="number" name="h_2" required><br/>
+            nu 1 <input type="text" name="nu_1" required><br/>
+            nu 2 <input type="text" name="nu_2" required><br/>
+            nu 3 <input type="text" name="nu_3" required><br/>
+            L 1 <input type="number" name="l_1" required><br/>
+            L 2 <input type="number" name="l_2" required><br/>
+            LPos 1 X <input type="number" name="lposx_1" required><br/>
+            LPos 1 Y <input type="number" name="lposy_1" required><br/>
+            LPos 2 X <input type="number" name="lposx_2" required><br/>
+            LPos 2 Y <input type="number" name="lposy_2" required><br/>
+            a <input type="number" name="a_1" required><br/>
+            x 1 etapa 1 <input type="number" name="x_1_1" required><br/>
+            x 2 etapa 1 <input type="number" name="x_2_1" required><br/>
+            x 3 etapa 1 <input type="number" name="x_3_1" required><br/>
+            y <input type="number" name="y_1" required><br/>
+            z 1 etapa 1 <input type="text" name="z_1_1" required><br/>
+            x 1 <input type="number" name="x_1" required><br/>
+            x 2 <input type="number" name="x_2" required><br/>
+            x 3 <input type="number" name="x_3" required><br/>
+            z 1 <input type="number" name="z_1" required><br/>
+            z 2 <input type="number" name="z_2" required><br/>
+            z 3 <input type="number" name="z_3" required><br/>
+            xx <input type="number" name="xx" required><br/>
+            depth <input type="number" name="depth" required><br/>
+            H3 <input type="number" name="h_3" required><br/>
+            H4 <input type="number" name="h_4" required><br/>
 
             <button type="submit">Calcular</button>
         </form>
